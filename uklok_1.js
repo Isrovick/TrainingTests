@@ -140,11 +140,11 @@ const returnChange = (change,  coins, index) => {
     if( change == 0 || index >= coins.length) return 0;
 
     const coin = coins[index];
-    const letToPay = change%coin;
+    const leftToPay = change%coin;
     const ExactMinCoinAmnt = Math.floor(change/coin); 
 
-     if(letToPay != 0){
-         return ExactMinCoinAmnt + returnChange(letToPay,coins,index+1);
+     if(leftToPay != 0){
+         return ExactMinCoinAmnt + returnChange(leftToPay,coins,index+1);
      } 
      else{
           return ExactMinCoinAmnt;
